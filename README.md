@@ -1,8 +1,8 @@
 ## Aktualnie posiadam dwa projekty postawione na Node JS. Są to:
-* [Rezerwacja parkingu](#Rezerwacja_parkingu)
+* [Rezerwacja parkingu](#Rezerwacja_Parkingu)
 * [Quiz](#Quiz)
 
-# Rezerwacja Parkingu
+# Rezerwacja_Parkingu
 ## General info
 Jest to projekt strony, za pomocą której możesz zarezerwować miejsce parkingowe. Wykorzystuje ono nierelacyjną bazę danych MongoDB. Responsywność strony stworzyłem z użyciem Bootstrap. 
 ## Strona Główna
