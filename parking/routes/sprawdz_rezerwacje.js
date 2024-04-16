@@ -33,9 +33,9 @@ router.post("/", async (req, res) => {
 
   // ### RENDERING RESERVATION INFO ### //
   if (!reservationInfo[0]) {
-    res.send("Brak takiej rezeracji");
-  } else if (reservationInfo[0].actual == "no") {
-    res.send("Brak takiej rezeracji");
+    res.send("Brak takiej rezeracji. Wróć do poprzedniej strony i spróbuj ponownie. Poprawne dane powinny znajdować się na twoim adresie e-mail");
+  } else if (reservationInfo[0].actual === "no") {
+    res.send("Brak takiej rezerwacji. Minął okres pobytu. W razie problemów skontaktuj się z działem obsługi klienta");
   } else {
     res.render("sprawdz_rezerwacje", {
       arriveDate: reservationInfo[0].arriveDate,

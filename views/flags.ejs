@@ -66,7 +66,7 @@
             id="wybranyCzas"
             type="number"
             placeholder="wybierz czas w sekundach"
-            style="width: 250px" />
+            style="width: 200px" />
         </div>
         <div class="col-3"><button id="start">Start</button></div>
         <div class="col-3">
@@ -185,61 +185,321 @@
         }
       }
 
+      function reset_kolorow(){
+        odp1div.style.color = "white";
+        odp1div.style.fontWeight = "normal";
+        odp2div.style.color = "white";
+        odp2div.style.fontWeight = "normal";
+        odp3div.style.color = "white";
+        odp3div.style.fontWeight = "normal";
+        odp4div.style.color = "white";
+        odp4div.style.fontWeight = "normal";
+        odp5div.style.color = "white";
+        odp5div.style.fontWeight = "normal";
+        odp6div.style.color = "white";
+        odp6div.style.fontWeight = "normal";
+        odp7div.style.color = "white";
+        odp7div.style.fontWeight = "normal";
+        odp8div.style.color = "white";
+        odp8div.style.fontWeight = "normal";
+        generujPytanie();
+      }
+
       odp1div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 0) {
           points++;
+          odp1div.style.color = "green";
+          odp1div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp1div.style.color = "red";
+          odp1div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp2div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 1) {
           points++;
+          odp2div.style.color = "green";
+          odp2div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp2div.style.color = "red";
+          odp2div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp3div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 2) {
           points++;
+          odp3div.style.color = "green";
+          odp3div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp3div.style.color = "red";
+          odp3div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp4div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 3) {
           points++;
+          odp4div.style.color = "green";
+          odp4div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp4div.style.color = "red";
+          odp4div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp5div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 4) {
           points++;
+          odp5div.style.color = "green";
+          odp5div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp5div.style.color = "red";
+          odp5div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp6div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 5) {
           points++;
+          odp6div.style.color = "green";
+          odp6div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp6div.style.color = "red";
+          odp6div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp7div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 6) {
           points++;
+          odp7div.style.color = "green";
+          odp7div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp7div.style.color = "red";
+          odp7div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
       odp8div.addEventListener("click", () => {
         if (poprawnaOdpowiedzMiejsce == 7) {
           points++;
+          odp8div.style.color = "green";
+          odp8div.style.fontWeight = "bolder";
+        }else {
+          if(poprawnaOdpowiedzMiejsce == 0){
+            odp1div.style.color = "green";
+            odp1div.style.fontWeight = "bolder";
+          } else if(poprawnaOdpowiedzMiejsce == 1){
+            odp2div.style.color = "green";
+            odp2div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 2){
+            odp3div.style.color = "green";
+            odp3div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 3){
+            odp4div.style.color = "green";
+            odp4div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 4){
+            odp5div.style.color = "green";
+            odp5div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 5){
+            odp6div.style.color = "green";
+            odp6div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 6){
+            odp7div.style.color = "green";
+            odp7div.style.fontWeight = "bolder";
+          }else if(poprawnaOdpowiedzMiejsce == 7){
+            odp8div.style.color = "green";
+            odp8div.style.fontWeight = "bolder";
+          }
+          odp8div.style.color = "red";
+          odp8div.style.fontWeight = "bolder";
         }
+        setTimeout(reset_kolorow, 1000)
         maxPoints++;
-        generujPytanie();
       });
 
       start.addEventListener("click", () => {
@@ -300,7 +560,7 @@
           ["Turcja", 87492900, 783356, "fi-tr"],
           ["Tajlandia", 69950000, 513120, "fi-th"],
           ["Francja", 67686700, 551695, "fi-fr"],
-          ["WielkaBrytania", 67704300, 243610, "fi-gb"],
+          ["Wielka Brytania", 67704300, 243610, "fi-gb"],
           ["Wlochy", 60375700, 301340, "fi-it"],
           ["Kenia", 58607000, 580367, "fi-ke"],
           ["Hiszpania", 47100396, 505992, "fi-es"],
@@ -338,10 +598,10 @@
           ["Mjanma", 54817910, 676578, "fi-mm"],
           ["Wenezuela", 28887118, 912050, "fi-ve"],
           ["Mozambik", 35176669, 799380, "fi-mz"],
-          ["Korea_Polnocna", 25727418, 120540, "fi-kp"],
+          ["Korea Polnocna", 25727418, 120540, "fi-kp"],
           ["Malezja", 32808200, 330803, "fi-my"],
           ["Syria", 17500657, 185180, "fi-sy"],
-          ["Sri_Lanka", 21413249, 65610, "fi-lk"],
+          ["Sri Lanka", 21413249, 65610, "fi-lk"],
           ["Kamerun", 27556246, 475442, "fi-cm"],
           ["Holandia", 17564700, 41526, "fi-nl"],
           ["Chorwacja", 4067500, 56594, "fi-hr"],
@@ -360,16 +620,13 @@
           ["Brunei", 459500, 5765, "fi-bn"],
           ["Bhutan", 771608, 38394, "fi-bt"],
           ["Fidzi", 896445, 18274, "fi-fj"],
-          ["Timor_Wschodni", 1324094, 14874, "fi-tl"],
           ["Lesotho", 2142249, 30355, "fi-ls"],
           ["Eswatini", 1193148, 17364, "fi-sz"],
           ["Gambia", 2456138, 11295, "fi-gm"],
           ["Guinea-Bissau", 2084859, 36125, "fi-gw"],
           ["Guyana", 786552, 214969, "fi-gy"],
           ["Surinam", 586632, 163820, "fi-sr"],
-          ["Gujanska_Francuska", 298682, 83203, "fi-gf"],
           ["Vanuatu", 307145, 12189, "fi-vu"],
-          ["Wyspy_Swietego_Tomasza_i_Ksiazeca", 222159, 964, "fi-st"],
           ["Kirygistan", 6628500, 199951, "fi-kg"],
           ["Tadzykistan", 9537645, 143100, "fi-tj"],
           ["Turkmenistan", 6031187, 491210, "fi-tm"],

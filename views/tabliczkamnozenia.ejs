@@ -57,20 +57,29 @@
 
     <div class="container-sm text-align-center">
       <div class="row">
-        <div class="col-3"><button id="start">Start</button></div>
-        <div class="col-3"><button id="restart">Restart</button></div>
-        <div class="col-3">Czas</div>
-        <div class="col-3">Punkty</div>
+        <div class="col-0 col-sm-1 mb-3"></div>
+        <div class="col-4 col-sm-2 mb-3 start"><button id="start_btn">Start</button></div>
+        <div class="col-4 col-sm-2 mb-3"><button id="restart" disabled>Restart</button></div>
+        <div class="col-4 col-sm-2"><input
+                  id="wybranyCzas"
+                  type="number"
+                  placeholder="set time"
+                  style="width: 100px" />
+        </div>
+        <div class="col-6 col-sm-2">Czas</div>
+        <div class="col-6 col-sm-2">Punkty</div>
+        <div class="col-0 col-sm-1"></div>
       </div>
       <div class="row mb-5">
-        <div class="col-6"></div>
-        <div class="col-3" id="czasPozostaly">10</div>
-        <div class="col-3" id="punktyZdobyte">0</div>
+        <div class="col-7"></div>
+        <div class="col-6 col-sm-2" id="czasPozostaly">10</div>
+        <div class="col-6 col-sm-2" id="punktyZdobyte">0</div>
+        <div class="col-1"></div>
       </div>
       <div class="row style-gra">
         <div class="col-8 style-dzialanie" id="cale-dzialanie">
           <span id="pierwszy"></span>
-          <span id="middle">Wciśnij start aby rozpocząć</span>
+          <span id="middle" >Wciśnij <span class="start" style="font-weight: bolder">start</span> aby rozpocząć</span>
           <span id="drugi"></span>
         </div>
         <div class="col-4">
@@ -79,20 +88,28 @@
       </div>
     </div>
     <script>
-      var answerInput = document.getElementById("answer");
+      let int;
+      let time;
+      let odliczanie_czasu;
+      let answerInput = document.getElementById("answer");
       let pierwszy = document.getElementById("pierwszy");
-      const start = document.getElementById("start");
+      const start_btn = document.getElementById("start_btn");
+      //const start_txt = document.getElementById("start_txt");
       let drugi = document.getElementById("drugi");
       const caledzialanie = document.getElementById("cale-dzialanie");
       const punktyZdobyte = document.getElementById("punktyZdobyte");
       const czasPozostaly = document.getElementById("czasPozostaly");
+      const wybranyCzasDiv = document.getElementById("wybranyCzas");
       let middle = document.getElementById("middle");
       const restart = document.getElementById("restart");
       const caledzialanieString = `
   <span id='pierwszy'></span>
-  <span id='middle'>Wciśnij start aby rozpocząć</span>
+  <span id='middle' >Wciśnij <span class='start' style='font-weight: bolder'>start</span> aby rozpocząć</span>
   <span id='drugi'></span>
 `;
+
+      let start = document.querySelectorAll(".start");
+      let czasMax;
       let pierwszaLiczba, drugaLiczba;
       let points = 0;
       // ### WYKRYWANIE ZMIANY INPUTA
@@ -111,48 +128,71 @@
         }
       });
 
-      // ### ZAKONCZENIE DZIALANIA GRY
-      start.addEventListener("click", () => {
-        pierwszy = document.getElementById("pierwszy");
-        drugi = document.getElementById("drugi");
-        middle = document.getElementById("middle");
-        answerInput.disabled = false;
-        middle.innerHTML = " * ";
-        restart.disabled = true;
-        start.disabled = true;
-        pierwszaLiczba = Math.floor(Math.random() * 11);
-        drugaLiczba = Math.floor(Math.random() * 11);
-        pierwszy.innerHTML = pierwszaLiczba;
-        drugi.innerHTML = drugaLiczba;
 
-        // ### KONIEC CZASU
-        setTimeout(() => {
-          answerInput.disabled = true;
-          restart.disabled = false;
-          caledzialanie.innerHTML =
-            "Koniec czasu, zebrałeś " + points + " punktów";
-        }, 10000);
-        let time = 9;
 
-        // ### INTERWAŁ WYŚWIETLANIA CZASU
-        let int = setInterval(() => {
-          czasPozostaly.innerHTML = time;
-          if (time <= 0) {
-            clearInterval(int);
+      for (let btn of start) {
+
+        btn.addEventListener("click", () => {
+          if(wybranyCzasDiv.value <= 3){
+            alert("Czas musi wynosić powyzej 3 sekund ! ! !");
+            wybranyCzasDiv.value = "";
             return;
-          } else {
-            time = time - 1;
           }
-        }, 1000);
-      });
+          middle.hidden = false;
+          pierwszy = document.getElementById("pierwszy");
+          drugi = document.getElementById("drugi");
+          middle = document.getElementById("middle");
+          answerInput.disabled = false;
+          middle.innerHTML = " * ";
+          start_btn.disabled = true;
+          restart.disabled = false;
+          czasMax = wybranyCzasDiv.value;
+          pierwszaLiczba = Math.floor(Math.random() * 11);
+          drugaLiczba = Math.floor(Math.random() * 11);
+          pierwszy.innerHTML = pierwszaLiczba;
+          drugi.innerHTML = drugaLiczba;
+          czasPozostaly.innerHTML = czasMax;
+          wybranyCzasDiv.value = 0;
+          // ### KONIEC CZASU
+          odliczanie_czasu = setTimeout(() => {
+            answerInput.disabled = true;
+            restart.disabled = false;
+            caledzialanie.innerHTML =
+                    "Koniec czasu, zebrałeś " + points + " punktów";
+          }, czasMax * 1000);
+          time = czasMax;
+
+          // ### INTERWAŁ WYŚWIETLANIA CZASU
+          int = setInterval(() => {
+            if(time == 0){
+              time = 1;
+            }
+            czasPozostaly.innerHTML = time - 1;
+            if (time <= 0) {
+              clearInterval(int);
+              return;
+            } else {
+              time = time - 1;
+            }
+          }, 1000);
+        });
+      }
+
+      // ### START DZIALANIA GRY
+
+
+
 
       restart.addEventListener("click", () => {
-        start.disabled = false;
-        caledzialanie.innerHTML = caledzialanieString;
-        punktyZdobyte.innerHTML = 0;
-        czasPozostaly.innerHTML = 10;
+        clearInterval(int);
+        start_btn.disabled =false;
+        restart.disabled = true;
+        middle.hidden = false;
+        punktyZdobyte.innerHTML = "0";
+        czasPozostaly.innerHTML = "0";
         points = 0;
-        time = 9;
+        time = 0;
+        clearInterval(odliczanie_czasu);
       });
     </script>
   </body>

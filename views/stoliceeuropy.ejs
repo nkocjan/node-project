@@ -262,6 +262,7 @@
       let poprawnaOdpowiedz;
 
       function generujPytanieClose() {
+
         if (iteracjaClose >= liczbaPytanClose) {
           punktyZdobyteClose.innerHTML = pointsClose;
           odpowiedzClose.disabled = true;
@@ -401,6 +402,7 @@
       let liczbaPytan, x;
 
       function generujPytanie() {
+        stolicaOpen.value = "";
         if (iteracja >= liczbaPytan) {
           zdobytePunktyOpen.innerHTML = points;
           setTimeout(() => {
@@ -424,7 +426,7 @@
       }
 
       wyslijOdpowiedzOpen.addEventListener("click", () => {
-        if (stolicaOpen.value == tableZgadywanie[x][1]) {
+        if ((stolicaOpen.value).toLowerCase() == (tableZgadywanie[x][1]).toLowerCase()) {
           points++;
           zdobytePunktyOpen.innerHTML = points;
         } else {

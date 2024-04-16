@@ -1,3 +1,6 @@
+
+
+
 const express = require("express");
 const nodemailer = require("nodemailer");
 const router = express.Router();
@@ -104,10 +107,12 @@ router.post("/", async (req, res, next) => {
         }
       });
     };
-    sendEmail(transporter, mailOptions);
+    await sendEmail(transporter, mailOptions);
     // ### RENDERING PAGE ### //
     res.render("wniosekVaild");
   } else {
+    res.send(result);
+    /*
     res.render("wniosek", {
       nameEr: result.nameEr,
       registrationNumberEr: result.registrationNumberEr,
@@ -116,6 +121,8 @@ router.post("/", async (req, res, next) => {
       emailEr: result.emailEr,
       arriveTimeEr: result.arriveTimeEr,
     });
+
+     */
   }
   next();
 });

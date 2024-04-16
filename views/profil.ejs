@@ -58,26 +58,35 @@
       <div class="wyswietl_wszystko">
         Podaj swoje imie, nazwisko, oraz numer telefonu, aby wyświetlić
         wszystkie twoje rezerwacje.
-        <form method="post" action="/profil">
+        <form method="post" action="/parking/profil">
           <fieldset>
-            <label for="imie">Imie</label>
-            <input type="text" id="imie" name="imie" />
-            <label for="nazwisko">Nazwisko</label>
-            <input type="text" id="nazwisko" name="nazwisko" />
-            <label for="numer">Numer telefonu</label>
-            <input type="number" id="numer" name="numer" />
-            <br />
-            <br />
-            <br />
-            <label for="reservationNumber">Numer rezerwacji</label>
-            <input
-              type="number"
-              id="reservationNumber"
-              name="reservationNumber" />
-            <label for="reservationCode">Kod rezerwacji</label>
-            <input type="number" id="reservationCode" name="reservationCode" />
-            <br />
-            <button type="submit">Wyświetl rezerwacje</button>
+            <div class="row mb-5">
+              <div class="col-3"><label for="imie">Imie</label></div>
+              <div class="col-9"><input type="text" id="imie" name="imie" /></div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-3"><label for="nazwisko">Nazwisko</label></div>
+              <div class="col-9"><input type="text" id="nazwisko" name="nazwisko" /></div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-3"><label for="numer">Numer telefonu</label></div>
+              <div class="col-9"><input type="number" id="numer" name="numer" /></div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-3"><label for="reservationNumber">Numer rezerwacji</label></div>
+              <div class="col-9"><input
+                        type="number"
+                        id="reservationNumber"
+                        name="reservationNumber" /></div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-3"><label for="reservationCode">Kod rezerwacji</label></div>
+              <div class="col-9"><input type="number" id="reservationCode" name="reservationCode" /></div>
+            </div>
+            <div class="row">
+              <div class="col-12"><button type="submit" style="width: 150px">Wyświetl rezerwacje</button></div>
+            </div>
+
           </fieldset>
         </form>
       </div>
@@ -86,7 +95,7 @@
       </div>
     </div>
     <div style="position: fixed; right: 10px; left: 10px">
-      <form method="POST" action="/aktualizacja_bazy">
+      <form method="POST" action="/parking/aktualizacja_bazy">
         <button type="submit">admin</button>
       </form>
     </div>

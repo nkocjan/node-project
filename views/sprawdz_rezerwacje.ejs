@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-md-6 col-12">
           <div class="sprawdz-box-1 sprawdz-box">
-            <form method="post" action="/sprawdz_rezerwacje">
+            <form method="post" action="/parking/sprawdz_rezerwacje">
               <fieldset>
                 <label for="numer_rezerwacji">Podaj numer rezerwacji</label>
                 <input
@@ -110,12 +110,13 @@
                 <br />
               </div>
               <div class="rezerwacja-info prawo">
-                <%= locals.arriveDate %>
+                <span id="arriveDate"><%= locals.arriveDate %></span>
                 <br />
                 <br />
-                <%= locals.departuateDate %>
+                <span id="departuateDate"><%= locals.departuateDate %></span>
                 <br />
                 <br />
+                <span id="pozostaloDNI"></span>
                 <br />
                 <br />
                 <%= locals.price%> <%= locals.currency %>
@@ -130,5 +131,31 @@
         </div>
       </div>
     </div>
+  <script>
+    const arriveDate = document.getElementById("arriveDate");
+    const departuateDate = document.getElementById("departuateDate");
+    const pozostaloDNI = document.getElementById("pozostaloDNI");
+
+    function liczbaDniMiedzyDatami(data1, data2) {
+      // Tworzenie obiektów daty z ciągów wejściowych
+      const pierwszaData = new Date(data1);
+      const drugaData = new Date(data2);
+
+      // Obliczanie różnicy w czasie w milisekundach
+      const roznicaMS = drugaData - pierwszaData;
+
+      // Przeliczanie milisekund na dni
+      const roznicaDni = roznicaMS / (1000 * 60 * 60 * 24);
+
+      // Zwracanie wartości absolutnej różnicy (bez znaku)
+      return Math.abs(Math.round(roznicaDni));
+    }
+
+    // Przykładowe użycie funkcji
+    const dni = liczbaDniMiedzyDatami(arriveDate.innerHTML, departuateDate.innerHTML);
+    if(dni > 0){
+      pozostaloDNI.innerHTML = dni + " dni";
+    }
+    </script>
   </body>
 </html>

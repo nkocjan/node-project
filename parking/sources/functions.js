@@ -58,7 +58,7 @@ function isArriveDepartuateVaild(arriveTime, departuateTime) {
 function isArriveVaild(arriveTime) {
   const newDate = new Date();
   let date1 = new Date(arriveTime);
-  return newDate > date1;
+  return newDate < date1;
 }
 
 // ### CHECK IS PHONE NUMBER VAILD ### //

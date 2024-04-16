@@ -1,10 +1,12 @@
 body {
   background-image: url(../zdjecia/parking-spot.png);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-position: center;
   background-size: cover;
   font-family: "Montserrat", sans-serif;
-  margin: 0px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -65,7 +67,6 @@ li {
   width: 15vw;
   height: 5vh;
   font-size: 20px;
-  border: none;
   color: #d4a373;
   text-align: center;
   border-radius: 20px;
@@ -122,7 +123,6 @@ li {
 }
 .wyswietl_wszystko input {
   margin-right: 20px;
-  border: none;
   color: #d4a373;
   text-align: center;
   border-radius: 20px;
