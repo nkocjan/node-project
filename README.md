@@ -9,7 +9,7 @@ Jest to projekt strony, za pomocą której możesz zarezerwować miejsce parking
 Tutaj możemy zobaczyć, ile aktualnie jest wolnych miejsc ( uzależnione od zawartości bazy danych ). Wyświetlana jest również mapa google, wskazuje ona na losowy adres, ( taki parking nie istnieje ). Możemy wpisać imię i nazwisko oraz przejść dalej.
 
 ## Wyślij wniosek
-Podstrona zawiera formularz, który po wprowadzeniu danych dynamicznie oblicza koszt rezerwacji. Po złożeniu wniosku, na podany adres e-mail, zostaje wysłana informacja dotycząca kodów rezerwacji potrzebnych do późniejszego odczytania danych, oraz płatności.
+Podstrona zawiera formularz, który po wprowadzeniu danych dynamicznie oblicza koszt rezerwacji. Po złożeniu wniosku, na podany adres e-mail, zostaje wysłana informacja dotycząca kodów rezerwacji potrzebnych do późniejszego odczytania danych.
 
 ## Sprawdź swoją rezerwację
 Podstrona służąca do sprawdzenia aktualnego stanu rezerwacji. Czy jest ona jeszcze aktualna, czy jest opłacona, od kiedy do kiedy trwa.
